@@ -9,7 +9,7 @@ Door:
   18067263 Fabian van de Ridder :      fabrree  
 
 
-req:
+Req:  
   Geeft een lijst met namen van beschikbare examens  
   Geeft een lijst met namen en nummers van studenten  
   Een student is geslaagd bij minimaal één succesvolle poging  
