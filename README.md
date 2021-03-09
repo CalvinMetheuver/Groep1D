@@ -1,12 +1,12 @@
 # Groep1D
 Project Examen  
 Door:    
-  20195745 Bilal el Hassani          BilalElhassani  
-  20195680 Calvin Metheuver          CalvinMetheuver  
-  20179081 Ilyas Laari               YskonYn070  
-  20134835 Sufyaan Barow             SufyaanGit  
-  20110219 Raoul Soerdjbalie         Raoul-S  
-  18067263 Fabian van de Ridder      fabrree  
+  20195745 Bilal el Hassani :          BilalElhassani  
+  20195680 Calvin Metheuver :        CalvinMetheuver  
+  20179081 Ilyas Laari :               YskonYn070  
+  20134835 Sufyaan Barow :             SufyaanGit  
+  20110219 Raoul Soerdjbalie :         Raoul-S  
+  18067263 Fabian van de Ridder :      fabrree  
 
 
 req:
