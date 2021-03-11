@@ -1,8 +1,9 @@
 import java.util.Scanner;
 
 class Menu {
-    
+
     public void getMenu(){
+
         System.out.println("1) Lijst met examens");
         System.out.println("2) Lijst met studenten");
         System.out.println("3) Nieuwe student inschrijven");
@@ -13,12 +14,11 @@ class Menu {
         System.out.println("8) Welke student heeft de meeste examens gehaald?");
         System.out.println("0) exit");
         System.out.print("Uw keuze:");
-    }
 
-    public void getKeuze(){
+        // Keuze van het menu wordt hier afgehandeld
         Scanner scanner = new Scanner(System.in);
         Integer keuze = scanner.nextInt();
-
+      
         while(keuze > 8){
             System.out.print("Maak uw keuze:");
             keuze = scanner.nextInt();
