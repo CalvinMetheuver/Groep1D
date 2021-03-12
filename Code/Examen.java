@@ -26,10 +26,9 @@ public class Examen{
         System.out.println("welk examen wil je maken? 0 = java Examen 1= verkeers Examen");
         int antwoord = scanner.nextInt();
 
-        if (antwoord.equals("")){
-            System.out.println("antwoord 0 gekozen > javaExamen start");
-
-        }
+       // if (antwoord.("")){
+      //      System.out.println("antwoord 0 gekozen > javaExamen start");
+      //  }
 
         if (antwoord == 1){
             System.out.println("antwoord 1 gekozen > verkeersExamen start");
