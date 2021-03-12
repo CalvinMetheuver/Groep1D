@@ -6,27 +6,25 @@ import java.util.Scanner;
 
 class ReadFiles {
     
+    // Array vullen met examen namen
     public static void readExamens() throws FileNotFoundException{
-        Scanner scanner = new Scanner(new File("Examens.txt"));
+        Scanner scanner = new Scanner(new File("Examen.txt"));
 
         while(scanner.hasNextLine()){
-            //class Examen en arraylist examens moeten nog worden aangemaakt
-            Examen examen = new Examen(scanner.nextLine());
-            Examen.examens.add(examen);
+            new Examen(scanner.nextLine());
         }
     }
 
-    public static void readStudenten() throws FileNotFoundException{
-        Scanner scanner = new Scanner(new File("Studenten.txt"));
-        int nummer;
-        String naam;
-        while(scanner.hasNextLine()){
-            scanner.useDelimiter(",");
-            nummer = scanner.nextInt();
-            naam = scanner.next();
-            // class Student en arraylist studenten moeten nog worden aangemaakt
-            Student student = new Student(nummer,naam);
-            Student.studenten.add(student);
-        }
-    }
+    // public static void readStudenten() throws FileNotFoundException{
+    //     Scanner scanner = new Scanner(new File("Studenten.txt"));
+    //     int nummer;
+    //     String naam;
+    //     while(scanner.hasNextLine()){
+    //         scanner.useDelimiter(",");
+    //         nummer = scanner.nextInt();
+    //         naam = scanner.next();
+    //         // class Student en arraylist studenten moeten nog worden aangemaakt
+    //         new Student(nummer,naam);
+    //     }
+    // }
 }
