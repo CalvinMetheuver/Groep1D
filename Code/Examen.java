@@ -67,5 +67,52 @@ public class Examen{
     }
 */
 }
+/*
+import java.util.ArrayList;
 
+public class NamenExamens {
+}
+
+import java.util.ArrayList;
+
+
+public class NamenExamens{
+    private ArrayList<String> namenExamens = new ArrayList<String>();
+
+
+    public void addExamen(String item){
+        namenExamens.add(item);
+    }
+
+    public void printExam(){
+        System.out.println("Je hebt " + namenExamens.size() + " examens.");
+        for (int i = 0; i < namenExamens.size(); i++){
+            System.out.println((i+1) + ". " +namenExamens.get(i));
+        }
+    }
+
+    public void modifyExam(int position, String newItem){
+        namenExamens.set(position, newItem);
+        System.out.println("Examen " + (position+1) + " is aangepast.");
+    }
+
+    public void removeExam(int position){
+        String theExam = namenExamens.get(position);
+        namenExamens.remove(position);
+    }
+
+
+    // "indexOf" geeft -1 terug als examen niet is gevonden
+    public String findExam(String zoekExamen){//boolean exists = namenExamens.contains(zoekExamen);
+        int position = namenExamens.indexOf(zoekExamen);
+        if (position >= 0){
+            return namenExamens.get(position);
+        }
+        return null;
+    }
+}
+
+
+
+*/
 
