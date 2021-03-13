@@ -26,7 +26,9 @@ class Menu {
           System.out.println();
           switch (keuze) {
             case 1:
-                System.out.println("Monday");
+                Examen.addExamen("Java examen");
+                Examen.addExamen("Verkeers examen");
+                Examen.printExamens();
               break;
             case 2:
                 System.out.println("Tuesday");

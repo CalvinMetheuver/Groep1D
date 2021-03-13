@@ -17,6 +17,24 @@ public class Examen{
     public static final String [] examen123 = new String[]{"javaExamen","verkeersExamen"};
 
 
+    //fabians nieuwe code BEGIN
+
+    public static ArrayList<String> namenExamens = new ArrayList<String>();
+
+    public static void addExamen(String item){
+        namenExamens.add(item);
+    }
+
+    public static void printExamens(){
+        System.out.println("printExamens() called");
+        System.out.println("Je hebt " + namenExamens.size() + " examens.");
+        for (int i = 0; i < namenExamens.size(); i++){
+            System.out.println((i+1) + ". " +namenExamens.get(i));
+        }
+    }
+
+    //fabians nieuwe code EIND
+
 
     //constructor
     public Examen (String naam){

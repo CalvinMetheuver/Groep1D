@@ -8,7 +8,7 @@ class ReadFiles {
     
     // Array vullen met examen namen
     public static void readExamens() throws FileNotFoundException{
-        Scanner scanner = new Scanner(new File("Examen.txt"));
+        Scanner scanner = new Scanner(new File("C:\\Users\\PC\\Documents\\GitHub\\Groep1D\\Code\\Examen.txt"));
 
         while(scanner.hasNextLine()){
             new Examen(scanner.nextLine());
