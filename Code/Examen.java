@@ -21,6 +21,26 @@ public class Examen{
 
     vragen.add("Hoe vermenigvuldig je iets in Java?\nDoor gebruik te maken van:\nA) '\nB) *\nC) **\nD) /");
 
+    
+    //fabians nieuwe code BEGIN
+
+    public static ArrayList<String> namenExamens = new ArrayList<String>();
+
+    public static void addExamen(String item){
+        namenExamens.add(item);
+    }
+
+    public static void printExamens(){
+        System.out.println("printExamens() called");
+        System.out.println("Je hebt " + namenExamens.size() + " examens.");
+        for (int i = 0; i < namenExamens.size(); i++){
+            System.out.println((i+1) + ". " +namenExamens.get(i));
+        }
+    }
+    
+    //fabians nieuwe code EIND
+
+
     //constructor
     public Examen (String naam){
         this.naam = naam;
