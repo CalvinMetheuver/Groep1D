@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
+
 public class Examen{
 
     //instace variables
@@ -12,18 +13,20 @@ public class Examen{
 
     private final static ArrayList<Examen> examens = new ArrayList<Examen>(); // javaExamen & verkeersExamen
     private final ArrayList<String> vragen = new ArrayList<String>();
-    private final ArrayList<Examen> antwoorden = new ArrayList<Examen>();
+    private final ArrayList<char> antwoorden = new ArrayList<char>();
 
     public static final String [] examen123 = new String[]{"javaExamen","verkeersExamen"};
 
+    Scanner scanner = new Scanner(System.in);
 
+    vragen.add("Hoe vermenigvuldig je iets in Java?\nDoor gebruik te maken van:\nA) '\nB) *\nC) **\nD) /");
 
     //constructor
     public Examen (String naam){
         this.naam = naam;
         examens.add(this);
 
-        // Scanner scanner = new Scanner(System.in);
+        
 
         // System.out.println("welk examen wil je maken? 0 = java Examen 1= verkeers Examen");
         // int antwoord = scanner.nextInt();
@@ -39,8 +42,57 @@ public class Examen{
 
     }
 
+    //Vullen van de vragen en antwoorden
+
+
     public String getNaam(){
         return this.naam;
+    }
+
+    public int javaExamen(){
+
+        char antwoord;  //var voor de antwoorden die de student geeft
+        int goed = 0;   //var voor het aantal vragen goed
+
+        Sytem.out.println("U heeft voor het Javaexamen gekozen.\nHet examen bestaat uit 9 meerkeuzevragen, u dient te antwoorden met a,b,c of d.\nHet Javaexamen gaat nu van start.");  //Verheldering van het examen dat wordt gemaakt
+
+        for(int i=0; i<9;i++){                  //for loop om alle vragen te stellen
+            vragen.get(i);                      //de vragen opvragen van de arraylist
+            antwoord = scanner.nextChar();      //student geeft hier antwoord
+            if(antwoord == antwoord.get(i)){    
+                goed++;
+            }
+                
+        }
+
+        int cijfer = 1+goed;
+
+        
+        System.out.println("U heeft " + goed + " antwoorden van de 9 goed.\n Daarmee komt uw score uit op een: "+ cijfer)
+        return cijfer;
+    }
+
+    public int verkeersExamen(){
+
+        char antwoord;  //var voor de antwoorden die de student geeft
+        int goed = 0;   //var voor het aantal vragen goed
+
+        Sytem.out.println("U heeft voor het Verkeersexamen gekozen.\nHet examen bestaat uit 9 meerkeuzevragen, u dient te antwoorden met a,b,c of d.\nHet Verkeersexamen gaat nu van start.");  //Verheldering van het examen dat wordt gemaakt
+
+        for(int i=0; i<9;i++){                  //for loop om alle vragen te stellen
+            vragen.get(i);                      //de vragen opvragen van de arraylist
+            antwoord = scanner.nextChar();      //student geeft hier antwoord
+            if(antwoord == antwoord.get(i)){    
+                goed++;
+            }
+                
+        }
+
+        int cijfer = 1+goed;
+
+        
+        System.out.println("U heeft " + goed + " antwoorden van de 9 goed.\n Daarmee komt uw score uit op een: "+ cijfer)
+        return cijfer;
     }
 
 /*
@@ -67,6 +119,8 @@ public class Examen{
     }
 */
 }
+
+
 /*
 import java.util.ArrayList;
 
