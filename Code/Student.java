@@ -4,8 +4,8 @@ public class Student {
     private final Integer studentcode;
     private final String naam;
     private ArrayList <Student> Studenten = new ArrayList<Student>();
-    private Integer exBehaald;
-    private ArrayList <Examen> maakt;
+    private Integer exBehaald = 0;
+    private ArrayList <Examen> maakt;// moet dit niet weg, want er is al een getExamens?
 
     public Student(Integer studentcode, String naam)
         {
@@ -15,7 +15,7 @@ public class Student {
         }
 public String getNaam()
 {
-    return naam;
+    return this.naam;
 }
 
 public void addStudent(Student Student) //Volgens mij moeten we hier Student Student meegeven maar staat niet in diagram
@@ -28,8 +28,8 @@ public ArrayList<Student> showStudenten()
     return Studenten;
 }
 
-public void deleteStudenten()
+public void deleteStudenten(Student Student)
 {
-//? test test
+    Studenten.remove(Student);
 }
     }
