@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Student {
+class Student {
     //Instance Variables
     private final Integer studentcode;
     private final String naam;
