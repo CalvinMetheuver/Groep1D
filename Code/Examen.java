@@ -26,9 +26,10 @@ public class Examen {
 
     //Examen toevoegen en printen
 
-    //public static final String[] examen123 = new String[]{"javaExamen", "verkeersExamen"};
+
 
     public static ArrayList<String> namenExamens = new ArrayList<String>();
+
 
 
 
@@ -57,6 +58,7 @@ public class Examen {
         System.out.println("Typ nu je antwoord.");
 
         int verwijzing = scanner.nextInt();
+        scanner.nextLine();
 
         while (verwijzing != 1 && verwijzing != 2) {
 
@@ -64,10 +66,12 @@ public class Examen {
 
             printExamens();
             verwijzing = scanner.nextInt();
+            scanner.nextLine();
 
         }
 
         if(verwijzing == 1){
+
             javaExamen();
         }
 
@@ -98,12 +102,12 @@ public class Examen {
     }
 
 
-    public int javaExamen() {
+    public double javaExamen() {
 
-        addJavaVraag("\nVraag 1. \nHoe vermenigvuldig je iets in Java? \nDoor gebruik te maken van: \nA) ' \nB) *\nC) **\nD) .");
+        addJavaVraag("\nVraag 1. \nHoe vermenigvuldig je iets in Java? \nDoor gebruik te maken van: \nA) ' \nB) *\nC) **\nD) ^");
         addJavaAntwoord("b");
 
-        addJavaVraag("\nVraag 2. \nHoe vermenigvuldig je iets in Java? \nDoor gebruik te maken van: \nA) ' \nB) *\nC) **\nD) .");
+        addJavaVraag("\nVraag 2. \nHoe kan je getallen delen in Java? \nDoor gebruik te maken van: \nA) % \nB) *\nC) @\nD) /");
         addJavaAntwoord("b");
 
         addJavaVraag("\nVraag 3. \nHoe vermenigvuldig je iets in Java? \nDoor gebruik te maken van: \nA) ' \nB) *\nC) **\nD) .");
@@ -114,28 +118,31 @@ public class Examen {
         String antwoord;  //var voor de antwoorden die de student geeft
         int goed = 0;   //var voor het aantal vragen goed
 
-        System.out.println("U heeft voor het Java examen gekozen.\nHet examen bestaat uit 9 meerkeuzevragen, u dient te antwoorden met a,b,c of d.\nHet Java examen gaat nu van start.");  //Verheldering van het examen dat wordt gemaakt
+        System.out.println("U heeft voor het Java examen gekozen.\nHet examen bestaat uit "+ javaVragen.size() + " meerkeuzevragen, u dient te antwoorden met a,b,c of d.\nHet Java examen gaat nu van start.");  //Verheldering van het examen dat wordt gemaakt
 
         for (int i = 0; i < javaVragen.size(); i++) {                  //for loop om alle vragen te stellen
             System.out.println(javaVragen.get(i));                     //de vragen opvragen van de arraylist
             System.out.println("Vul hier uw antwoord in: ");
             antwoord = scanner.nextLine().toLowerCase();                          //student geeft hier antwoord
 
-            if ((antwoord.equals("a")) || (antwoord.equals("b")) ||(antwoord.equals("c")) || (antwoord.equals("d"))) {
-                if (antwoord.equals(javaAntwoorden.get(i))) {
-                    goed++;
-                }
-            }
-            else {
+            while((!(antwoord.equals("a"))) && (!(antwoord.equals("b"))) && (!(antwoord.equals("c"))) && (!(antwoord.equals("d")))){
                 System.out.println("Onjuiste invoer. Vul a, b, c of d in.");
-                // hier opnieuw de vraag vragen
+
+                System.out.println(javaVragen.get(i));                     //de vragen opnieuw opvragen van de arraylist
+                System.out.println("Vul hier uw antwoord in: ");
+                antwoord = scanner.nextLine().toLowerCase();               //nogmaals antwoorden
+
+            }
+
+            if (antwoord.equals(javaAntwoorden.get(i))) {
+                goed++;
             }
         }
 
-        int cijfer = 1 + goed;
+        double cijfer = 1 + 9/javaVragen.size()*goed;
 
 
-        System.out.println("\nU heeft " + goed + " antwoorden van de " + javaVragen.size() +  " goed.\n Daarmee komt uw cijfer uit op een: " + cijfer+"\n");
+        System.out.println(String.format("\nU heeft " + goed + " antwoorden van de " + javaVragen.size() +  " goed.\n Daarmee komt uw cijfer uit op een: %.1f\n", cijfer));
         return cijfer;
     }
 
