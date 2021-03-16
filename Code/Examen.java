@@ -13,6 +13,8 @@ public class Examen {
     private final static ArrayList<String> javaVragen = new ArrayList<String>();
     private final static ArrayList<String> javaAntwoorden = new ArrayList<String>();
 
+
+
     //constructor
     public Examen(String naam) {
         this.naam = naam;
@@ -28,6 +30,8 @@ public class Examen {
 
     public static ArrayList<String> namenExamens = new ArrayList<String>();
 
+
+
     public static void addExamen(String item) {
         namenExamens.add(item);
     }
@@ -36,13 +40,42 @@ public class Examen {
         addExamen("Verkeers examen");
 
         System.out.println("printExamens() called");
-        System.out.println("Je hebt " + namenExamens.size() + " examens.");
+        System.out.println("Je hebt " + namenExamens.size() + " examens:");
         for (int i = 0; i < namenExamens.size(); i++) {
             System.out.println((i + 1) + ". " + namenExamens.get(i));
         }
 
     }
     //Examen toevoegen en printen eind
+
+    //verwijzing naar examen FOUT, JE KAN DE EERSTE VRAAG NIET TE BEANTWOORDEN
+
+    public void verwijzingExamens() {
+        System.out.println("Welk examen wil je maken?");
+        printExamens();
+
+        System.out.println("Typ nu je antwoord.");
+
+        int verwijzing = scanner.nextInt();
+
+        while (verwijzing != 1 && verwijzing != 2) {
+
+            System.out.println("Onjuiste invoer. Probeer nogmaals.\n");
+
+            printExamens();
+            verwijzing = scanner.nextInt();
+
+        }
+
+        if(verwijzing == 1){
+            javaExamen();
+        }
+
+        if(verwijzing == 2){
+            System.out.println("Verkeersexamen()");
+        }
+
+    }
 
 
 
@@ -85,7 +118,7 @@ public class Examen {
 
         for (int i = 0; i < javaVragen.size(); i++) {                  //for loop om alle vragen te stellen
             System.out.println(javaVragen.get(i));                     //de vragen opvragen van de arraylist
-            System.out.print("Vul hier uw antwoord in: ");
+            System.out.println("Vul hier uw antwoord in: ");
             antwoord = scanner.nextLine().toLowerCase();                          //student geeft hier antwoord
 
             if ((antwoord.equals("a")) || (antwoord.equals("b")) ||(antwoord.equals("c")) || (antwoord.equals("d"))) {
@@ -102,7 +135,7 @@ public class Examen {
         int cijfer = 1 + goed;
 
 
-        System.out.println("U heeft " + goed + " antwoorden van de " + javaVragen.size() +  " goed.\n Daarmee komt uw cijfer uit op een: " + cijfer);
+        System.out.println("\nU heeft " + goed + " antwoorden van de " + javaVragen.size() +  " goed.\n Daarmee komt uw cijfer uit op een: " + cijfer+"\n");
         return cijfer;
     }
 
