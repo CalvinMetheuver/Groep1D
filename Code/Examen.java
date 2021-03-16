@@ -39,7 +39,6 @@ public class Examen {
         addExamen("Java examen");
         addExamen("Verkeers examen");
 
-        System.out.println("printExamens() called");
         System.out.println("Je hebt " + namenExamens.size() + " examens:");
         for (int i = 0; i < namenExamens.size(); i++) {
             System.out.println((i + 1) + ". " + namenExamens.get(i));
@@ -48,15 +47,18 @@ public class Examen {
     }
     //Examen toevoegen en printen eind
 
+
+
     //verwijzing naar examen FOUT, JE KAN DE EERSTE VRAAG NIET TE BEANTWOORDEN
 
     public void verwijzingExamens() {
-        System.out.println("Welk examen wil je maken?");
         printExamens();
+        System.out.print("Welk examen wil je maken? (1, 2, 3 etc.) : ");
 
-        System.out.println("Typ nu je antwoord.");
 
         int verwijzing = scanner.nextInt();
+        scanner.nextLine(); // Calvin je bent de eerste week java les vergeten... <3
+
 
         while (verwijzing != 1 && verwijzing != 2) {
 
@@ -67,6 +69,7 @@ public class Examen {
 
         }
 
+
         if(verwijzing == 1){
             javaExamen();
         }
@@ -76,7 +79,7 @@ public class Examen {
         }
 
     }
-
+    //einde verwijzing naar examen FOUT, JE KAN DE EERSTE VRAAG NIET TE BEANTWOORDEN
 
 
 
