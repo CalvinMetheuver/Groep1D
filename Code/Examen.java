@@ -143,8 +143,6 @@ public class Examen {
     //EIND VAN JAVA EXAMEN IF LOOP
 
     //Hier verkeersexamen methode
-
-
 }
 
 
