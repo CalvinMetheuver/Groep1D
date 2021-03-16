@@ -31,13 +31,16 @@ public class Examen {
     public static void addExamen(String item) {
         namenExamens.add(item);
     }
-
     public static void printExamens() {
+        addExamen("Java examen");
+        addExamen("Verkeers examen");
+
         System.out.println("printExamens() called");
         System.out.println("Je hebt " + namenExamens.size() + " examens.");
         for (int i = 0; i < namenExamens.size(); i++) {
             System.out.println((i + 1) + ". " + namenExamens.get(i));
         }
+
     }
     //Examen toevoegen en printen eind
 
