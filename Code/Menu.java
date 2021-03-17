@@ -26,7 +26,8 @@ class Menu {
           System.out.println();
           switch (keuze) {
             case 1:
-                System.out.println("Monday");
+                Examen.printExamens();
+                // willen we dat na deze "keuze" de gebruiker opnieuw iets kan invoeren?
               break;
             case 2:
                 System.out.println("Tuesday");
