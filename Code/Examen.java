@@ -37,9 +37,20 @@ public class Examen {
 
         System.out.println("printExamens() called");
         System.out.println("Er zijn " + namenExamens.size() + " examens:");
-        for (int i = 0; i < namenExamens.size(); i++) {
-            System.out.println((i + 1) + ". " + namenExamens.get(i));
+
+        for (String item : namenExamens){
+            System.out.println(item);
         }
+      /*
+      * Het bovenstaande doet precies hetzelfde als dit stukje code hieronder.
+      * Het is alleen makkelijker d.m.v. een Enhanced for loop
+      */
+
+      //  for (int i = 0; i < namenExamens.size(); i++) {
+      //      System.out.println((i + 1) + ". " + namenExamens.get(i));
+      //  }
+
+
     }
     //Examen toevoegen en printen eind
 
