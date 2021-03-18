@@ -22,9 +22,9 @@ class Student {
         return this.naam;
     }
 
-    public void addStudent(Student Student) //Volgens mij moeten we hier Student Student meegeven maar staat niet in diagram
+    public void addStudent() //Volgens mij moeten we hier Student Student meegeven maar staat niet in diagram
     {
-        Studenten.add(Student);
+        Studenten.add(this.studentcode);
     }
 
     public ArrayList<Student> showStudenten()
@@ -32,8 +32,8 @@ class Student {
         return Studenten;
     }
 
-    public void deleteStudenten(Student Student)
+    public void deleteStudenten()
     {
-        Studenten.remove(Student);
+        Studenten.remove(this.studentcode);
     }
 }
