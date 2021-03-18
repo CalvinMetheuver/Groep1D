@@ -95,7 +95,7 @@ public class Exam {
 
     //START VAN JAVA EXAMEN IF LOOP
 
-    public static void addJavaVraag(String vraag){
+    public void addJavaVraag(String vraag){
         javaVragen.add(vraag);
     }
     public void addJavaAntwoord(String antwoord){
