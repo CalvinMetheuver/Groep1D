@@ -18,35 +18,35 @@ class Menu {
         // Keuze van het menu wordt hier afgehandeld
         Scanner scanner = new Scanner(System.in);
         Integer keuze = scanner.nextInt();
-      
+
         while(keuze > 8){
             System.out.print("Maak uw keuze:");
             keuze = scanner.nextInt();
-          }
-          System.out.println();
-          switch (keuze) {
+        }
+        System.out.println();
+        switch (keuze) {
             case 1:
                 Examen.printExamens();
                 // willen we dat na deze "keuze" de gebruiker opnieuw iets kan invoeren?
-              break;
+                break;
             case 2:
-                System.out.println("Tuesday");
-              break;
+                Student.showStudenten();
+                break;
             case 3:
-                System.out.println("Wednesday");
-              break;
+                Student.addStudent();
+                break;
             case 4:
-                System.out.println("Thursday");
-              break;
+                Student.deleteStudenten();
+                break;
             case 5:
-              System.out.println("Friday");
-              break;
+                System.out.println("Friday");
+                break;
             case 6:
-              System.out.println("Saturday");
-              break;
+                System.out.println("Saturday");
+                break;
             case 7:
-              System.out.println("Sunday");
-              break;
+                System.out.println("Sunday");
+                break;
         }
         scanner.close();
     }

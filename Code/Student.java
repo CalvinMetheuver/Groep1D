@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 class Student {
     //Instance Variables
-    private final Integer studentcode;
-    private final String naam;
-    private ArrayList <Student> Studenten = new ArrayList<Student>();
+    private Integer studentcode;
+    private String naam;
+    private static ArrayList <Student> Studenten = new ArrayList<Student>();
     private Integer exBehaald = 0;
     private ArrayList <Examen> maakt;// moet dit niet weg, want er is al een getExamens?
 
@@ -18,40 +18,50 @@ class Student {
         this.naam = naam;
         Studenten.add(this);
     }
-    
+
     //Instance Methods
     public String getNaam()
     {
         return this.naam;
     }
 
-    public void addStudent() //Volgens mij moeten we hier Student Student meegeven maar staat niet in diagram
+    public Integer getStudentCode()
+    {
+        return this.studentcode;
+    }
+
+    public static void addStudent()
     {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wat is de studentcode van de student");
-        studentcode= scanner.nextInt();
+        int studentnummer= scanner.nextInt();
+        scanner.nextLine();
         System.out.println("Wat is de naam van de student?");
-        naam= scanner.nextLine();
-        Studenten.add(new Student(studentcode, naam));
+        String studentnaam= scanner.nextLine();
+        Studenten.add(new Student(studentnummer, studentnaam));
         System.out.println("Student is toegevoegd");
     }
 
-    public ArrayList<Student> showStudenten()
+    public static void showStudenten()
     {
-        return Studenten;
+        for(Student student: Studenten){
+            System.out.println(student.getNaam() + " " + student.getStudentCode());
+        }
     }
 
-    public void deleteStudenten()//IllegalStateException error
+    public static void deleteStudenten()
     {
-        Iterator<Student> itr = Studenten.iterator();
-        Studenten.add(new Student(12, "Jam"));
+
+        showStudenten();
         System.out.println("Voer de studentcode in van de student die u wilt verwijderen.");
         Scanner scanner = new Scanner(System.in);
-        Integer deleteStudentcode = scanner.nextInt();
-            for (Student item : Studenten) {
-                if (deleteStudentcode.equals(item.studentcode)) {
-                    itr.remove();
-                    System.out.println("Student succesvol verwijderd");
-                    System.out.println(Arrays.toString(Studenten.toArray()));
+        int deleteStudentcode = scanner.nextInt();
+        for (int i = 0; i<Studenten.size(); i++) {
+            if (deleteStudentcode == Studenten.get(i).getStudentCode()) {
+                Studenten.remove(i);
+                System.out.println("Student succesvol verwijderd: ");
+            }
+        }
+        showStudenten();
     }
 }
