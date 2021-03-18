@@ -3,24 +3,27 @@ import java.util.Scanner;
 
 
 
-public class Examen {
+public class Exam {
     Scanner scanner = new Scanner(System.in);
 
     //instace variables
     private String naam;
 
-    private final static ArrayList<Examen> examens = new ArrayList<Examen>(); // javaExamen & verkeersExamen
-    private final static ArrayList<String> javaVragen = new ArrayList<String>();
-    private final static ArrayList<String> javaAntwoorden = new ArrayList<String>();
-
+    private final static ArrayList<Exam> examens = new ArrayList<Exam>(); // javaExamen & verkeersExamen
+    private ArrayList<String> javaVragen = new ArrayList<String>();
+    private ArrayList<String> javaAntwoorden = new ArrayList<String>();
+    private ArrayList<Assignment> consistsOf = new ArrayList<Assignment>();
 
 
     //constructor
-    public Examen(String naam) {
+    public Exam(String naam) {
         this.naam = naam;
         examens.add(this);
     }
 
+    public String getNaam() {
+        return naam;
+    }
 
 
 
@@ -35,7 +38,6 @@ public class Examen {
         addExamen("Java examen");
         addExamen("Verkeers examen");
 
-        System.out.println("printExamens() called");
         System.out.println("Er zijn " + namenExamens.size() + " examens:");
 
         for (String item : namenExamens){

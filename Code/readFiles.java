@@ -11,7 +11,7 @@ class ReadFiles {
         Scanner scanner = new Scanner(new File("Examen.txt"));
 
         while(scanner.hasNextLine()){
-            new Examen(scanner.nextLine());
+            new Exam(scanner.nextLine());
         }
     }
 

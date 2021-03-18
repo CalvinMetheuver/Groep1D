@@ -7,7 +7,7 @@ class Main{
         // Arrays inlezen met de opgeslagen data uit een txt file
         ReadFiles.readExamens();
         //ReadFiles.readStudenten();
-
+        
         Menu menu = new Menu();
         menu.getMenu();
     }
