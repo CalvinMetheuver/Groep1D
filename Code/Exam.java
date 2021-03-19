@@ -17,7 +17,7 @@ public class Exam {
     private ArrayList<String> javaVragen = new ArrayList<String>();
     private ArrayList<String> javaAntwoorden = new ArrayList<String>();
 
-    private ArrayList<Assignment> consistsOf = new ArrayList<Assignment>();
+    private static ArrayList<Assignment> consistsOf = new ArrayList<Assignment>();
 
     //constructor
     public Exam(String naam) {
@@ -32,11 +32,14 @@ public class Exam {
     public void addAssignment(String vraag, String antwoord){
         this.consistsOf.add(new Assignment(vraag,antwoord));
         //qa = Questions & answers
+    }
+
+
+    public static void printArrayListJava(){
         for (Assignment qa: consistsOf){
             System.out.println(qa.getQuestion() + " " + qa.getAnswer());
         }
     }
-
 
 
     //Examen toevoegen en printen
