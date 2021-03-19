@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 
 public class Exam {
+
+
+
+
     Scanner scanner = new Scanner(System.in);
 
     //instace variables
@@ -12,8 +16,8 @@ public class Exam {
     private final static ArrayList<Exam> examens = new ArrayList<Exam>(); // javaExamen & verkeersExamen
     private ArrayList<String> javaVragen = new ArrayList<String>();
     private ArrayList<String> javaAntwoorden = new ArrayList<String>();
-    private ArrayList<Assignment> consistsOf = new ArrayList<Assignment>();
 
+    private ArrayList<Assignment> consistsOf = new ArrayList<Assignment>();
 
     //constructor
     public Exam(String naam) {
@@ -23,6 +27,14 @@ public class Exam {
 
     public String getNaam() {
         return naam;
+    }
+
+    public void addAssignment(String vraag, String antwoord){
+        this.consistsOf.add(new Assignment(vraag,antwoord));
+        //qa = Questions & answers
+        for (Assignment qa: consistsOf){
+            System.out.println(qa.getQuestion() + " " + qa.getAnswer());
+        }
     }
 
 
@@ -79,7 +91,7 @@ public class Exam {
 
         if(verwijzing == 1){
 
-            javaExamen();
+
         }
 
         if(verwijzing == 2){
