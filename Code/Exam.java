@@ -27,9 +27,16 @@ public class Exam {
 
 
     public void printAssignments(){
-        for (Assignment qa: assignment){
-            System.out.println(qa.getQuestion() + " " + qa.getAnswer());
+        int good = 0;
+
+        for (Assignment qa: this.assignment){
+            System.out.println(qa.getQuestion());
+            String answer = scanner.nextLine().toLowerCase();
+            if(answer.equals(qa.getAnswer())){
+                good++;
+            }
         }
+        System.out.println(good);
     }
 
     public static void printExams(){
@@ -37,36 +44,41 @@ public class Exam {
             System.out.println(exam.getName());
         }
     }
-    // public void verwijzingExamens() {
 
-    //     printExamens();
+    public static int verwijzingExamens() {
+        Scanner invoer = new Scanner(System.in);
 
-    //     System.out.println("\nWelk examen wil je maken?");
-    //     System.out.println("Typ het corresponderende nummer.");
+        printExams();
 
-    //     int verwijzing = scanner.nextInt();
-    //     scanner.nextLine();
+         System.out.println("\nWelk examen wil je maken?");
+         System.out.println("Typ het corresponderende nummer.");
 
-    //     while (verwijzing != 1 && verwijzing != 2) {
+         int verwijzing = invoer.nextInt();
+         invoer.nextLine();
 
-    //         System.out.println("Onjuiste invoer. Probeer nogmaals.\n");
+         while (verwijzing != 1 && verwijzing != 2) {
 
-    //         printExamens();
-    //         verwijzing = scanner.nextInt();
-    //         scanner.nextLine();
+             System.out.println("Onjuiste invoer. Probeer nogmaals.\n");
 
-    //     }
+             printExams();
+             verwijzing = invoer.nextInt();
+             invoer.nextLine();
 
-    //     if(verwijzing == 1){
+         }
+         return verwijzing;
 
+         /*
+         if(verwijzing == 1){
 
-    //     }
+         }
 
-    //     if(verwijzing == 2){
-    //         System.out.println("Verkeersexamen()");
-    //     }
+         if(verwijzing == 2){
 
-    // }
+         }
+
+          */
+
+    }
 }
 
 
