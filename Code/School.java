@@ -4,7 +4,6 @@ import java.util.Scanner;
 class School {
     private static ArrayList <Student> studenten = new ArrayList<Student>();
 
-    
     public static void addStudent()
     {
         Scanner scanner = new Scanner(System.in);

@@ -2,9 +2,6 @@ import java.io.FileNotFoundException;
 
 class Main{
 
-
-
-
     public static void main(String[] args) throws FileNotFoundException{
 
 
@@ -20,10 +17,11 @@ class Main{
         algemeneKennis.addAssignment("kut dfa33a", "K");
         //Exam hardcoded end
 
-        Exam.printArrayListJava();
+        java.printAssignments();
+
 
         // Arrays inlezen met de opgeslagen data uit een txt file
-        //  ReadFiles.readExamens();
+        ReadFiles.readExamens();
         //ReadFiles.readStudenten();
         
          Menu menu = new Menu();
