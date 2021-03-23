@@ -22,6 +22,9 @@ public class Exam {
         }
     }
 
+    public ArrayList<Assignment> getAssignment() {
+        return assignment;
+    }
 
     public String getName() {
         return naam;
@@ -31,12 +34,10 @@ public class Exam {
         this.assignment.add(new Assignment(vraag,antwoord));
         //qa = Questions & answers
     }
-   
+
     public static void printExams(){
         for (Exam exam: exams){
             System.out.println(exam.getName());
         }
     }
 }
-
-
