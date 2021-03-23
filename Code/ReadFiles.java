@@ -18,39 +18,53 @@ class ReadFiles {
         }
     }
 
-    //test fabian voor antwoorden en vragen in 1 .txt uitlezen
-  public static void readJavaQandA() throws FileNotFoundException{
-        try {
-            File file = new File("javaAnswersAndQuestions.txt");
-            String f = file.getAbsolutePath();
-            Scanner scanner = new Scanner(new File(f));
 
-            while (scanner.hasNextLine()) {
-                String[] split = scanner.nextLine().split(";");
-                //split[0] = alles voor ;
-                //split[1] =
-                String vraag = split[0];
-                String antwoord = split[1];
+    public static void readJavaQandA() throws FileNotFoundException{
+        File file = new File("javaAnswersAndQuestions.txt");
+        String f = file.getAbsolutePath();
+        Scanner scanner = new Scanner(new File(f));
 
-                Exam java = new Exam("java");
-                java.addAssignment(vraag, antwoord);
-            }
+        while (scanner.hasNextLine()) {
+            String[] split = scanner.nextLine().split(";");
+            String question = split[0];
+            String answer = split[1];
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            Exam java = new Exam("java");
+            java.addAssignment(question, answer);
         }
     }
 
-    // public static void readStudenten() throws FileNotFoundException{
-    //     Scanner scanner = new Scanner(new File("Studenten.txt"));
-    //     int nummer;
-    //     String naam;
-    //     while(scanner.hasNextLine()){
-    //         scanner.useDelimiter(",");
-    //         nummer = scanner.nextInt();
-    //         naam = scanner.next();
-    //         // class Student en arraylist studenten moeten nog worden aangemaakt
-    //         new Student(nummer,naam);
-    //     }
-    // }
+    // Studenten ArrayList wordt gevult vanuit "Studenten.txt"
+    public static void readStudenten() throws FileNotFoundException{
+        File file = new File("Studenten.txt");
+        String f = file.getAbsolutePath();
+        Scanner scanner = new Scanner(new File(f));
+
+        while (scanner.hasNextLine()) {
+            //split [0] = de eerste var voor je komma (de "regex"), split [1] na de 1e ","
+            String[] split = scanner.nextLine().split(",");
+            String number = split[0];
+            int code = Integer.parseInt(number);
+            String name = split[1];
+            School.addStudent(code, name);
+        }
+    }
+
+
+
+//
+//     public static void readStudenten() throws FileNotFoundException{
+//         File file = new File("Studenten.txt");
+//         String f = file.getAbsolutePath();
+//         Scanner scanner = new Scanner(new File(f));
+//         int number;
+//         String name;
+//         while(scanner.hasNextLine()){
+//             scanner.useDelimiter(",");
+//             number = scanner.nextInt();
+//             name = scanner.next();
+//              School.addStudent(number,name);
+//         }
+//     }
+
 }

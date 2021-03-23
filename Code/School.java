@@ -2,33 +2,27 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class School {
+    
     private static ArrayList <Student> studenten = new ArrayList<Student>();
 
-    public static void addStudent()
+    public static void addStudent(int number, String name)
     {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Wat is de studentcode van de student");
-        int studentnummer= scanner.nextInt();
-        scanner.nextLine();
-        System.out.println("Wat is de naam van de student?");
-        String studentnaam= scanner.nextLine();
-        scanner.close();
-        studenten.add(new Student(studentnummer, studentnaam));
-        System.out.println("Student is toegevoegd");
-        showStudents();
+        studenten.add(new Student(number, name));
+
     }
 
     public static void showStudents()
     {
+        int counter = 1;
         for(Student student: studenten){
-            System.out.println(student.getName() + " " + student.getStudentcode());
+            System.out.println(counter+": "+student.getName() + " " + student.getStudentcode());
+            counter++;
         }
     }
 
     public static void deleteStudents()
     {
 
-        showStudents();
         System.out.println("Voer de studentcode in van de student die u wilt verwijderen.");
         Scanner scanner = new Scanner(System.in);
         int deleteStudentcode = scanner.nextInt();

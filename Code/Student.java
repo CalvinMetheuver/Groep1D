@@ -1,5 +1,8 @@
+import java.util.ArrayList;
+
 class Student {
     //Instance Variables
+    private static ArrayList <Make> make = new ArrayList<Make>();
     private Integer studentcode;
     private String name;
 
@@ -20,5 +23,9 @@ class Student {
 
     public String getName() {
         return name;
+    }
+
+    public void addMake(int studentcode, int examNumber){
+        make.add(new Make(studentcode, examNumber));
     }
 }
