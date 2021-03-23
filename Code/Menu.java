@@ -35,20 +35,32 @@ class Menu {
             case 3:
                 System.out.println("Wat is de studentcode van de student");
                 int number = scanner.nextInt();
+
                 scanner.nextLine();
+
                 System.out.println("Wat is de naam van de student?");
                 String name = scanner.nextLine();
-                scanner.close();
+
                 School.addStudent(number, name);
                 System.out.println("Student is toegevoegd");
-                School.showStudents(); //wauw!
+
+                School.showStudents();
                 break;
             case 4:
                 School.showStudents();
                 School.deleteStudents();
                 break;
             case 5:
+                System.out.println("Welk student gaat het examen maken?");
+                School.showStudents();
+                int studentcode= scanner.nextInt() - 1;
+
+                System.out.println("welk examen wilt de student maken?");
                 Exam.printExams();
+                int examNumber = scanner.nextInt() - 1;
+
+                //School.getStudent().addMake(studentcode, examNumber);
+
                 break;
             case 6:
                 System.out.println("Saturday");

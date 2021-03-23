@@ -22,6 +22,13 @@ public class Exam {
         }
     }
 
+    public ArrayList<Assignment> getAssignment() {
+        return assignment;
+    }
+
+    public ArrayList<Exam> getExams() {
+        return exams;
+    }
 
     public String getName() {
         return naam;
@@ -33,8 +40,10 @@ public class Exam {
     }
    
     public static void printExams(){
+        int counter = 1;
         for (Exam exam: exams){
-            System.out.println(exam.getName());
+            System.out.println(counter+": "+exam.getName());
+            counter++;
         }
     }
 }

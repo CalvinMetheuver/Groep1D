@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class School {
+    
     private static ArrayList <Student> studenten = new ArrayList<Student>();
 
     public static void addStudent(int number, String name)
@@ -12,14 +13,15 @@ class School {
 
     public static void showStudents()
     {
+        int counter = 1;
         for(Student student: studenten){
-            System.out.println(student.getName() + " " + student.getStudentcode());
+            System.out.println(counter+": "+student.getName() + " " + student.getStudentcode());
+            counter++;
         }
     }
 
     public static void deleteStudents()
     {
-
 
         System.out.println("Voer de studentcode in van de student die u wilt verwijderen.");
         Scanner scanner = new Scanner(System.in);
