@@ -20,7 +20,7 @@ class School {
         }
     }
 
-    public static void deleteStudents()
+    public static void deleteStudent()
     {
 
         System.out.println("Voer de studentcode in van de student die u wilt verwijderen.");

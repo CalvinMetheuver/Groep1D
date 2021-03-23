@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 class Make {
     private boolean passed;
     private Exam exam;

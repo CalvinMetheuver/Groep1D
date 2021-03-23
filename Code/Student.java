@@ -17,10 +17,6 @@ class Student {
         return studentcode;
     }
 
-    public void setStudentcode(Integer studentcode) {
-        this.studentcode = studentcode;
-    }
-
     public String getName() {
         return name;
     }

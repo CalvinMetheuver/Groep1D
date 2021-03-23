@@ -48,7 +48,7 @@ class Menu {
                 break;
             case 4:
                 School.showStudents();
-                School.deleteStudents();
+                School.deleteStudent();
                 break;
             case 5:
                 System.out.println("Welk student gaat het examen maken?");
