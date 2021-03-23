@@ -23,7 +23,7 @@ class ReadFiles {
 
     //test fabian voor antwoorden en vragen in 1 .txt uitlezen
 
-    public static void readJavaQandA() throws FileNotFoundException{
+  public static void readJavaQandA() throws FileNotFoundException{
         try {
             File file = new File("javaAnswersAndQuestions.txt");
             String f = file.getAbsolutePath();
@@ -31,12 +31,14 @@ class ReadFiles {
 
 
             while (scanner.hasNextLine()) {
-
                 String[] split = scanner.nextLine().split(";");
                 //split[0] = alles voor ;
                 //split[1] =
-                System.out.println(split[0]);
+                String vraag = split[0];
+                String antwoord = split[1];
 
+                Exam java = new Exam("java");
+                java.addAssignment(vraag, antwoord);
             }
 
         } catch (FileNotFoundException e) {
