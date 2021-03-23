@@ -25,7 +25,6 @@ class ReadFiles {
             String f = file.getAbsolutePath();
             Scanner scanner = new Scanner(new File(f));
 
-
             while (scanner.hasNextLine()) {
                 String[] split = scanner.nextLine().split(";");
                 //split[0] = alles voor ;

@@ -17,8 +17,6 @@ class Main{
         algemeneKennis.addAssignment("kut dfa33a", "K");
         //Exam hardcoded end
 
-        java.printAssignments();
-
 
         // Arrays inlezen met de opgeslagen data uit een txt file
         ReadFiles.readExamens();
