@@ -1,4 +1,11 @@
-1. hoe oud ben je?;A
-2. wanneer dit dat doe?;B
-3. hoelaat eten?;C
-4. wanneer eten?;D
+Vraag 1. Hoe vermenigvuldig je iets in Java? Door gebruik te maken van: A) ' B) * C) ** D) ^; b
+Vraag 2. Hoe kan je getallen delen in Java? Door gebruik te maken van: A) % B) * C) @ D) /; b
+Vraag 3. Hoe vermenigvuldig je iets in Java? Door gebruik te maken van: A) ' B) * C) ** D) .; b
+Vraag 2. Hoe kan je getallen delen in Java? Door gebruik te maken van: A) % B) _  C) @ D) /; d
+Vraag 3. Hoe maak je een comment in Java? Door gebruik te maken van: A) ' B) * C) ** D) //; d
+Vraag 4. Hoeveel verschillende antwoorden zijn er bij een Boolean expressie? A) 0 B) 1 C) 2 D) oneindig veel; c
+Vraag 5. Welk symbool wordt gebruikt voor een OR operator bij een Boolean expressie? A) ! B) && C) || D) //; c
+Vraag 6. Wat is de juiste manier om een String array genaamd cars aan te maken? A) String cars[] B) String[] cars C) String cars = [] D) []String cars; b
+Vraag 7. Hoe los je de wortel van een getal op? Door gebruik te maken van: A) Math.sqrt(x) B) sqrt(x) C) math.sqrt(x) D) MATH.sqrt(x); a
+Vraag 8. Wat voor type variabel is een char? A) int B) String C) Bool D) Long;b
+Vraag 9. Wat is de uitkomst van Math.abs(-3,9)? A) -3,9 B) 4 C) -4 D) 3,9;d
