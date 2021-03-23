@@ -33,13 +33,22 @@ class Menu {
                 School.showStudents();
                 break;
             case 3:
-                School.addStudent();
+                System.out.println("Wat is de studentcode van de student");
+                int number = scanner.nextInt();
+                scanner.nextLine();
+                System.out.println("Wat is de naam van de student?");
+                String name = scanner.nextLine();
+                scanner.close();
+                School.addStudent(number, name);
+                System.out.println("Student is toegevoegd");
+                School.showStudents(); //wauw!
                 break;
             case 4:
+                School.showStudents();
                 School.deleteStudents();
                 break;
             case 5:
-                System.out.println("Friday");
+                Exam.printExams();
                 break;
             case 6:
                 System.out.println("Saturday");

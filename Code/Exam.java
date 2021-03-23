@@ -16,6 +16,13 @@ public class Exam {
         exams.add(this);
     }
 
+    public void printAssignment(){
+        for (Assignment qa: assignment){
+            System.out.println(qa.getQuestion());
+        }
+    }
+
+
     public String getName() {
         return naam;
     }
