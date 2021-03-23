@@ -1,0 +1,4 @@
+1. hoe oud ben je?;A
+2. wanneer dit dat doe?;B
+3. hoelaat eten?;C
+4. wanneer eten?;D
