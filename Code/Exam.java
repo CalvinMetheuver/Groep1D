@@ -16,12 +16,6 @@ public class Exam {
         exams.add(this);
     }
 
-    public void printAssignment(){
-        for (Assignment qa: assignments){
-            System.out.println(qa.getQuestion());
-        }
-    }
-
     public ArrayList<Assignment> getAssignment() {
         return assignments;
     }
@@ -37,14 +31,6 @@ public class Exam {
     public void addAssignment(String vraag, String antwoord){
         this.assignments.add(new Assignment(vraag,antwoord));
         //qa = Questions & answers
-    }
-   
-    public static void printExams(){
-        int counter = 1;
-        for (Exam exam: exams){
-            System.out.println(counter+": "+exam.getName());
-            counter++;
-        }
     }
 }
 

@@ -9,7 +9,7 @@ class ReadFiles {
     // Array vullen met examen namen
     public static void readExamens() throws FileNotFoundException{
 
-        File file = new File("Examen.txt");
+        File file = new File("Exams.txt");
         String f = file.getAbsolutePath();
         Scanner scanner = new Scanner(new File(f));
 
@@ -18,25 +18,9 @@ class ReadFiles {
         }
     }
 
-
-    public static void readJavaQandA() throws FileNotFoundException{
-        File file = new File("javaAnswersAndQuestions.txt");
-        String f = file.getAbsolutePath();
-        Scanner scanner = new Scanner(new File(f));
-
-        while (scanner.hasNextLine()) {
-            String[] split = scanner.nextLine().split(";");
-            String question = split[0];
-            String answer = split[1];
-
-            Exam java = new Exam("java");
-            java.addAssignment(question, answer);
-        }
-    }
-
     // Studenten ArrayList wordt gevult vanuit "Studenten.txt"
     public static void readStudenten() throws FileNotFoundException{
-        File file = new File("Studenten.txt");
+        File file = new File("Students.txt");
         String f = file.getAbsolutePath();
         Scanner scanner = new Scanner(new File(f));
 
@@ -46,25 +30,23 @@ class ReadFiles {
             String number = split[0];
             int code = Integer.parseInt(number);
             String name = split[1];
-            School.addStudent(code, name);
+            School.addToStudentList(code, name);
         }
     }
 
+    public static void readJavaQandA() throws FileNotFoundException{
+        File file = new File("JavaExam.txt");
+        String f = file.getAbsolutePath();
+        Scanner scanner = new Scanner(new File(f));
+        Exam java = Exam.getExams().get(0);
 
+        while (scanner.hasNextLine()) {
+            String[] split = scanner.nextLine().split(";");
+            //String question = split[0];
+            String question = split[0] + "\n" + split[1] + "\n" + split[2] + "\n" + split[3]+ "\n" + split[4];
+            String answer = split[5];
 
-//
-//     public static void readStudenten() throws FileNotFoundException{
-//         File file = new File("Studenten.txt");
-//         String f = file.getAbsolutePath();
-//         Scanner scanner = new Scanner(new File(f));
-//         int number;
-//         String name;
-//         while(scanner.hasNextLine()){
-//             scanner.useDelimiter(",");
-//             number = scanner.nextInt();
-//             name = scanner.next();
-//              School.addStudent(number,name);
-//         }
-//     }
-
+            java.addAssignment(question, answer);
+        }
+    }
 }

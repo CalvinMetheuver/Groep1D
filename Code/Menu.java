@@ -1,8 +1,9 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 class Menu {
 
-    public void getMenu(){
+    public void getMenu() throws IOException{
 
         System.out.println("1) Lijst met examens");
         System.out.println("2) Lijst met studenten");
@@ -26,29 +27,19 @@ class Menu {
         System.out.println();
         switch (keuze) {
             case 1:
-                Exam.printExams();
-                // willen we dat na deze "keuze" de gebruiker opnieuw iets kan invoeren?
+                School.showExams();
                 break;
             case 2:
                 School.showStudents();
                 break;
             case 3:
-                System.out.println("Wat is de studentcode van de student");
-                int number = scanner.nextInt();
-
-                scanner.nextLine();
-
-                System.out.println("Wat is de naam van de student?");
-                String name = scanner.nextLine();
-
-                School.addStudent(number, name);
-                System.out.println("Student is toegevoegd");
-
+                School.addStudent();
                 School.showStudents();
                 break;
             case 4:
                 School.showStudents();
                 School.deleteStudent();
+                School.showStudents();
                 break;
             case 5:
                 System.out.println("Welk student gaat het examen maken?");
@@ -56,13 +47,12 @@ class Menu {
                 int studentcode= scanner.nextInt() - 1;
 
                 System.out.println("welk examen wilt de student maken?");
-                Exam.printExams();
+                School.showExams();
                 int examNumber = scanner.nextInt() - 1;
                 Exam.getExams().get(examNumber);
                 School.getStudent(studentcode).addMake(Exam.getExams().get(examNumber));
 
-                System.out.println(School.getStudent(studentcode).getMake().getExam().getName());
-                
+                School.getStudent(studentcode).attempts.get(examNumber).takeExam();
 
                 break;
             case 6:

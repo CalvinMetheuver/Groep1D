@@ -6,10 +6,10 @@ class Make {
     public Make(Student student, Exam exam){
         this.student = student;
         this.exam = exam;
+        this.passed = false;
     }
     
     public void takeExam(){
-
         for(Assignment assignment: this.exam.getAssignment()){
             System.out.println(assignment.getQuestion());
         }
