@@ -58,8 +58,11 @@ class Menu {
                 System.out.println("welk examen wilt de student maken?");
                 Exam.printExams();
                 int examNumber = scanner.nextInt() - 1;
+                Exam.getExams().get(examNumber);
+                School.getStudent(studentcode).addMake(Exam.getExams().get(examNumber));
 
-                //School.getStudent().addMake(studentcode, examNumber);
+                System.out.println(School.getStudent(studentcode).getMake().getExam().getName());
+                
 
                 break;
             case 6:

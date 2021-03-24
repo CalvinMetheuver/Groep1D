@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 class Student {
     //Instance Variables
-    private static ArrayList <Make> make = new ArrayList<Make>();
+    private ArrayList <Make> make = new ArrayList<Make>();
     private Integer studentcode;
     private String name;
 
@@ -21,7 +21,14 @@ class Student {
         return name;
     }
 
-    public void addMake(int studentcode, int examNumber){
-        make.add(new Make(studentcode, examNumber));
+    public void addMake(Exam exam){
+        make.add(new Make(this,exam));
+    }
+
+    public Make getMake(){
+        for(Make m : make){
+            return m;
+        }
+        return null;
     }
 }

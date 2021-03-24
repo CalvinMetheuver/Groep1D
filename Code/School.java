@@ -35,4 +35,8 @@ class School {
         }
         showStudents();
     }
+
+    public static Student getStudent(int studentcode){
+        return studenten.get(studentcode);
+    }
 }

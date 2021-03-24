@@ -1,22 +1,25 @@
 class Make {
     private boolean passed;
     private Exam exam;
-    private int studentcode;
-    private int examNumber;
+    private Student student;
 
-    public Make(int studentcode, int examNumber){
-        this.studentcode = studentcode;
-        this.examNumber = examNumber;
+    public Make(Student student, Exam exam){
+        this.student = student;
+        this.exam = exam;
     }
-
-    //getStudent moet worden aangemaakt denk ik
-
+    
     public void takeExam(){
 
-        for(Assignment assignment: exam.getExams().get(examNumber).getAssignment()){
+        for(Assignment assignment: this.exam.getAssignment()){
             System.out.println(assignment.getQuestion());
         }
-
     }
 
+    public Student getStudent(){
+        return this.student;
+    }
+
+    public Exam getExam(){
+        return this.exam;
+    }
 }

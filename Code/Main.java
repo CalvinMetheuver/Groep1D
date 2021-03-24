@@ -11,7 +11,5 @@ class Main{
         Menu menu = new Menu();
         menu.getMenu();
 
-        
-        //student.getMake().takeExam();
     }
 }

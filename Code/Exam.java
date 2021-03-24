@@ -6,7 +6,7 @@ public class Exam {
     Scanner scanner = new Scanner(System.in);
 
     //instace variables
-    private ArrayList<Assignment> assignment = new ArrayList<Assignment>();
+    private ArrayList<Assignment> assignments = new ArrayList<Assignment>();
     private static ArrayList<Exam> exams = new ArrayList<Exam>();
     private String naam;
 
@@ -17,16 +17,16 @@ public class Exam {
     }
 
     public void printAssignment(){
-        for (Assignment qa: assignment){
+        for (Assignment qa: assignments){
             System.out.println(qa.getQuestion());
         }
     }
 
     public ArrayList<Assignment> getAssignment() {
-        return assignment;
+        return assignments;
     }
 
-    public ArrayList<Exam> getExams() {
+    public static ArrayList<Exam> getExams() {
         return exams;
     }
 
@@ -35,7 +35,7 @@ public class Exam {
     }
 
     public void addAssignment(String vraag, String antwoord){
-        this.assignment.add(new Assignment(vraag,antwoord));
+        this.assignments.add(new Assignment(vraag,antwoord));
         //qa = Questions & answers
     }
    
