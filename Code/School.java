@@ -7,9 +7,13 @@ import java.util.Scanner;
 
 class School {
     
-    private static ArrayList <Student> students = new ArrayList<Student>();
+    private ArrayList <Student> students;
     
-    public static void showStudents(){
+    public School(){
+        students = new ArrayList<Student>();
+    }
+
+    public void showStudents(){
         int counter = 1;
         for(Student student: students){
             System.out.println(counter+": "+student.getStudentCode() + " " + student.getName());
@@ -17,16 +21,20 @@ class School {
         }
     }
 
-    public static void addToStudentList(int number, String name)
+    public void addExam(String naam){
+        new Exam(naam);
+    }
+
+    public void addToStudentList(int number, String name)
     {
         students.add(new Student(number, name));
     }
 
-    public static Student getStudent(int studentcode){
+    public Student getStudent(int studentcode){
         return students.get(studentcode);
     }
 
-    public static void showExams(){
+    public void showExams(){
         int counter = 1;
         for (Exam exam: Exam.getExams()){
             System.out.println(counter+": "+exam.getName());
@@ -34,7 +42,7 @@ class School {
         }
     } 
 
-    public static void addStudent() throws IOException{
+    public void addStudent() throws IOException{
         
         // file initialiseren
         File file = new File("Students.txt");
@@ -69,7 +77,7 @@ class School {
         scanner.close();
     }
 
-    public static void deleteStudent() throws IOException
+    public void deleteStudent() throws IOException
     {
         // file initialiseren
         File file = new File("Students.txt");

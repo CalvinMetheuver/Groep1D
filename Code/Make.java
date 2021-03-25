@@ -10,8 +10,8 @@ class Make {
     }
     
     public void takeExam(){
-        for(Assignment assignment: this.exam.getAssignment()){
-            System.out.println(assignment.getQuestion());
+        if(this.exam.takeExam()){
+            passed = true;
         }
     }
 
@@ -21,5 +21,9 @@ class Make {
 
     public Exam getExam(){
         return this.exam;
+    }
+
+    public Boolean getPassed(){
+        return passed;
     }
 }

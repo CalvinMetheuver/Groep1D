@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Assignment {
     private String question;
     private String answer;
@@ -13,5 +15,12 @@ class Assignment {
     
     public String getAnswer(){
         return this.answer;
+    }
+
+    public boolean takeAssignment(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(question);
+        String answer = scanner.nextLine();
+        return this.answer.equalsIgnoreCase(answer);
     }
 }

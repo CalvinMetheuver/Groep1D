@@ -4,12 +4,13 @@ class Main{
 
     public static void main(String[] args) throws IOException{
 
+        Menu menu = new Menu(new School());
+
         // Arrays inlezen met de opgeslagen data uit een txt file
-        ReadFiles.readExamens();
-        ReadFiles.readStudenten();
+        ReadFiles.readExamens(menu);
+        ReadFiles.readStudenten(menu);
         ReadFiles.readJavaQandA();
 
-        Menu menu = new Menu();
         menu.getMenu();
  
     }

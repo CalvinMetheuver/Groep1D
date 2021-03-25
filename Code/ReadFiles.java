@@ -7,19 +7,19 @@ import java.util.Scanner;
 class ReadFiles {
 
     // Array vullen met examen namen
-    public static void readExamens() throws FileNotFoundException{
+    public static void readExamens(Menu menu) throws FileNotFoundException{
 
         File file = new File("Exams.txt");
         String f = file.getAbsolutePath();
         Scanner scanner = new Scanner(new File(f));
 
         while(scanner.hasNextLine()){
-            new Exam(scanner.nextLine());
+            menu.getSchool().addExam(scanner.nextLine());
         }
     }
 
     // Studenten ArrayList wordt gevult vanuit "Studenten.txt"
-    public static void readStudenten() throws FileNotFoundException{
+    public static void readStudenten(Menu menu) throws FileNotFoundException{
         File file = new File("Students.txt");
         String f = file.getAbsolutePath();
         Scanner scanner = new Scanner(new File(f));
@@ -30,7 +30,7 @@ class ReadFiles {
             String number = split[0];
             int code = Integer.parseInt(number);
             String name = split[1];
-            School.addToStudentList(code, name);
+            menu.getSchool().addToStudentList(code, name);
         }
     }
 

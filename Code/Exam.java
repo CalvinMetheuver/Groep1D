@@ -32,6 +32,21 @@ public class Exam {
         this.assignments.add(new Assignment(vraag,antwoord));
         //qa = Questions & answers
     }
+
+    public Boolean takeExam(){
+        int cijfer = 1;
+        for(Assignment assignment: this.getAssignment()){
+            if(assignment.takeAssignment()){
+                cijfer++;
+            }
+        }
+        if(cijfer > 5){
+            System.out.println("\nU heeft een "+cijfer+" behaald. U bent geslaagd!");
+            return true;
+        }
+        System.out.println("\nU heeft een "+cijfer+" behaald. U bent gezakt.");
+        return false;
+    }
 }
 
 
