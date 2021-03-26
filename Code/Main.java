@@ -10,6 +10,7 @@ class Main{
         ReadFiles.readExamens(menu);
         ReadFiles.readStudenten(menu);
         ReadFiles.readJavaQandA();
+        ReadFiles.readAlgemeneKennisQandA();
 
         menu.getMenu();
  

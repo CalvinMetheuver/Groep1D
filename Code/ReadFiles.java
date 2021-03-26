@@ -49,4 +49,21 @@ class ReadFiles {
             java.addAssignment(question, answer);
         }
     }
+
+    public static void readAlgemeneKennisQandA() throws FileNotFoundException{
+        File file = new File("AlgemeneKennisExam.txt");
+        String f = file.getAbsolutePath();
+        Scanner scanner = new Scanner(new File(f));
+        Exam algemeneKennis = Exam.getExams().get(1);
+
+        while (scanner.hasNextLine()) {
+            String[] split = scanner.nextLine().split(";");
+            //String question = split[0];
+            String question = split[0] + "\n" + split[1] + "\n" + split[2] + "\n" + split[3]+ "\n" + split[4];
+            String answer = split[5];
+
+            algemeneKennis.addAssignment(question, answer);
+        }
+    }
+
 }
