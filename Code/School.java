@@ -74,7 +74,6 @@ class School {
         addToStudentList(code, naam);
         pw.println(code+","+naam);
         pw.close();
-        scanner.close();
     }
 
     public void deleteStudent() throws IOException
