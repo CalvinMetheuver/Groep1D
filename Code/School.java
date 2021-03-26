@@ -111,7 +111,7 @@ class School {
         
         pw.close();
         sc.close();
-        scanner.close();
+
         System.out.println("\nStudent is verwijderd!");
     }
 }
