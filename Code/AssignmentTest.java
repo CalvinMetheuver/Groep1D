@@ -1,55 +1,48 @@
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 import java.util.Scanner;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 
 class AssignmentTest {
 
-    Assignment assignment = new Assignment("Vraag?", "Antwoord");
+    private static Assignment assignment;
+
+    @BeforeAll
+    public static void initEach() {
+        assignment = new Assignment("Vraag?", "Antwoord");
+        System.out.println("Before alll is called");
+    }
+
 
     //getQuestions
     @Test
     void getQuestion() {
-
-        //Positief
         assertEquals("Vraag?", assignment.getQuestion());
-        assertEquals("Antwoord", assignment.getAnswer());
-
     }
 
     @Test
     void getQuestionShouldReturnFalse() {
-
-        //Negetief
         assertEquals("Vrag?", assignment.getQuestion());
-        assertEquals("Antword", assignment.getAnswer());
     }
+
 
     //getAnswer
     @Test
     void getAnswer() {
-
+        assertEquals("Antwoord", assignment.getAnswer());
     }
 
     @Test
     void getAnswerShouldReturnFalse() {
-
+        assertEquals("Antword", assignment.getAnswer());
     }
 
-    //takeAssignment
     @Test
     void takeAssignment() {
-        /*
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Typ");
-        String input = scanner.nextLine();
-        System.out.println("input");
-
-        String goedAnt = "a";
-        assertTrue(input.equalsIgnoreCase(goedAnt));
-         */
-
         String input = "A";
         String goedAnt = "a";
         assertTrue(input.equalsIgnoreCase(goedAnt));
@@ -60,6 +53,14 @@ class AssignmentTest {
         String input = "b";
         String goedAnt = "a";
         assertTrue(input.equalsIgnoreCase(goedAnt));
-
     }
+    /*
+    @org.junit.Test(expected = IllegalArgumentException.class)
+    public void withdraw_notBranch() throws Exception {
+        account.withdraw(600.00, false);
+        fail("Should have thrown an IllegalArgumentException");
+    }
+
+ */
+
 }
