@@ -42,7 +42,7 @@ class Student {
         }
     }
 
-    public Make getMake(int student, int exam){
+    public Make getMake(int exam){
 
         for(Make attempt : attempts){
             if(Exam.getExams().get(exam) == attempt.getExam() && attempt.getStudent() == this){

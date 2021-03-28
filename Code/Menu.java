@@ -80,7 +80,7 @@ class Menu {
                 int examNumber = scanner.nextInt() - 1;
                 
                 this.getSchool().getStudent(studentcode).addMake(examNumber);
-                this.getSchool().getStudent(studentcode).getMake(studentcode, examNumber).takeExam();
+                this.getSchool().getStudent(studentcode).getMake(examNumber).takeExam();
                 break;
             case 6:
                 System.out.println("Welke student wilt zijn/haar resultaten zien?");
