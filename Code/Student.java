@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 class Student {
     //Instance Variables
@@ -41,7 +42,7 @@ class Student {
         }
     }
 
-    public Make getMake(int student, int exam){
+    public Make getMake(int exam){
 
         for(Make attempt : attempts){
             if(Exam.getExams().get(exam) == attempt.getExam() && attempt.getStudent() == this){
@@ -49,5 +50,29 @@ class Student {
             }
         }
         return null;
+    }
+
+    public void showPassed(){
+        if(!attempts.isEmpty()){
+            for(Make make: attempts) {
+                if (make.getPassed()) {
+                    System.out.println(this.getName()+" is geslaagd voor "+make.getExam().getName()+" examen.");
+                } else {
+                    System.out.println(this.getName()+" is gezakt voor "+make.getExam().getName()+" examen.");
+                }
+            }
+        } else {
+            System.out.println(this.getName()+" heeft nog geen examens gemaakt.");
+        }
+    }
+
+    public int getNumbersPassed(){
+        int counter = 0;
+        for(Make make: attempts){
+            if (make.getPassed()){
+                counter++;
+            }
+        }
+        return counter;
     }
 }
