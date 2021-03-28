@@ -20,7 +20,13 @@ class Assignment {
     public boolean takeAssignment(){
         Scanner scanner = new Scanner(System.in);
         System.out.println(question);
-        String answer = scanner.nextLine();
+        String answer = scanner.nextLine().toLowerCase();
+        while(!(answer.equals("a")) && !(answer.equals("b")) && !(answer.equals("c")) && !(answer.equals("d"))){
+            System.out.println("Onjuiste invoer, voer a, b, c of d in.\nNieuw antwoord:\n");
+            answer = scanner.nextLine().toLowerCase();
+        }
         return this.answer.equalsIgnoreCase(answer);
     }
+
+
 }
