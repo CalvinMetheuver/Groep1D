@@ -114,4 +114,25 @@ class School {
 
         System.out.println("\nStudent is verwijderd!");
     }
+
+    public void mostPassed(){
+        int studentnumber = 0;
+        int number = students.get(0).getNumbersPassed();
+        for(int i =1; i< students.size(); i++){
+            if (number < students.get(i).getNumbersPassed()){
+                number = students.get(i).getNumbersPassed();
+                studentnumber = i;
+            }
+        }
+        if (number != 0){
+            for (Student student: students) {
+                if (number == student.getNumbersPassed()) {
+                    System.out.println(student.getName());
+                }
+            }
+        } else{
+            System.out.println("Geen enkele student heeft een examen gehaald");
+        }
+
+    }
 }

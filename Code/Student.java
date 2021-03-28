@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 class Student {
     //Instance Variables
@@ -49,5 +50,29 @@ class Student {
             }
         }
         return null;
+    }
+
+    public void showPassed(){
+        if(!attempts.isEmpty()){
+            for(Make make: attempts) {
+                if (make.getPassed()) {
+                    System.out.println(make.getExam().getName() + " Geslaagd!");
+                } else {
+                    System.out.println(make.getExam().getName() + " Gezakt!");
+                }
+            }
+        } else {
+            System.out.println("Student heeft geen examens gemaakt");
+        }
+    }
+
+    public int getNumbersPassed(){
+        int counter = 0;
+        for(Make make: attempts){
+            if (make.getPassed()){
+                counter++;
+            }
+        }
+        return counter;
     }
 }
