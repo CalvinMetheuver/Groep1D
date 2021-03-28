@@ -56,13 +56,13 @@ class Student {
         if(!attempts.isEmpty()){
             for(Make make: attempts) {
                 if (make.getPassed()) {
-                    System.out.println(make.getExam().getName() + " Geslaagd!");
+                    System.out.println(this.getName()+" is geslaagd voor "+make.getExam().getName()+" examen.");
                 } else {
-                    System.out.println(make.getExam().getName() + " Gezakt!");
+                    System.out.println(this.getName()+" is gezakt voor "+make.getExam().getName()+" examen.");
                 }
             }
         } else {
-            System.out.println("Student heeft geen examens gemaakt");
+            System.out.println(this.getName()+" heeft nog geen examens gemaakt.");
         }
     }
 

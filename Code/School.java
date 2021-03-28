@@ -127,12 +127,11 @@ class School {
         if (number != 0){
             for (Student student: students) {
                 if (number == student.getNumbersPassed()) {
-                    System.out.println(student.getName());
+                    System.out.println(student.getName()+" heeft "+ student.getNumbersPassed()+" examen(s) behaald.");
                 }
             }
         } else{
-            System.out.println("Geen enkele student heeft een examen gehaald");
+            System.out.println("Geen enkele student heeft een examen behaald.");
         }
-
     }
 }

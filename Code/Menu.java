@@ -88,7 +88,6 @@ class Menu {
                 int studentnumber = scanner.nextInt() - 1;
 
                 this.getSchool().getStudent(studentnumber).showPassed();
-
                 break;
             case 7:
                 this.getSchool().mostPassed();
