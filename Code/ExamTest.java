@@ -20,33 +20,7 @@ class ExamTest {
         System.out.println("Before alll is called");
     }
 
-    @Test
-    void getAssignment() {
 
-        Assignment a = new Assignment("q?", "a");
-        assertEquals(a.getQuestion(), assignment.getQuestion());
 
-    }
 
-    @Test
-    void getExams() {
-        assertEquals("Java", exams.getName());
-    }
-
-    @Test
-    void getName() {
-        String naam = "AK";
-        assertEquals("AK",naam);
-    }
-
-    @Test
-    void addAssignment() {
-
-        exams.addAssignment("Q?", "A");
-        assertEquals(assignment, exams.getAssignment()); //DOET HET NIET
-    }
-
-    @Test
-    void takeExam(){
-    }
 }

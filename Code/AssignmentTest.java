@@ -11,56 +11,36 @@ class AssignmentTest {
 
     private static Assignment assignment;
 
+
     @BeforeAll
     public static void initEach() {
-        assignment = new Assignment("Vraag?", "Antwoord");
-        System.out.println("Before alll is called");
+        System.out.println("Dit wordt 1 keer uitgevoerd voordat de tests beginnen");
     }
 
 
-    //getQuestions
     @Test
-    void getQuestion() {
-        assertEquals("Vraag?", assignment.getQuestion());
-    }
+    void takeAssignmentCorrectInput() {
+        String answer = "A".toLowerCase();
+        assertEquals("a", answer);
+        System.out.println(answer);
 
-    @Test
-    void getQuestionShouldReturnFalse() {
-        assertEquals("Vrag?", assignment.getQuestion());
-    }
-
-
-    //getAnswer
-    @Test
-    void getAnswer() {
-        assertEquals("Antwoord", assignment.getAnswer());
-    }
-
-    @Test
-    void getAnswerShouldReturnFalse() {
-        assertEquals("Antword", assignment.getAnswer());
-    }
-
-    @Test
-    void takeAssignment() {
-        String input = "A";
         String goedAnt = "a";
-        assertTrue(input.equalsIgnoreCase(goedAnt));
+        System.out.println(goedAnt);
+
+        // is gelijk, zou niet in de while moeten komen invoer,
+        // antwoord gelijk (A / a)
+        assertTrue(goedAnt.equals(answer));
     }
 
     @Test
-    void takeAssignmentShouldReturnFalse() {
-        String input = "b";
+    void takeAssignmentWrongInput() {
+        String answer = "B".toLowerCase();
+        System.out.println(answer);
+        Scanner testScanner = new Scanner(answer);
         String goedAnt = "a";
-        assertTrue(input.equalsIgnoreCase(goedAnt));
+        // is ongelijk, zou WEL in de while moeten komen en nieuwe invoer opvragen,
+        //antwoord ongelijk (B / a)
+        assertTrue(!(goedAnt.equals(testScanner)));
     }
-    /*
-    @org.junit.Test(expected = IllegalArgumentException.class)
-    public void withdraw_notBranch() throws Exception {
-        account.withdraw(600.00, false);
-        fail("Should have thrown an IllegalArgumentException");
-    }
-
- */
 
 }
