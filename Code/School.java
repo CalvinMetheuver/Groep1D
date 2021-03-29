@@ -21,6 +21,10 @@ class School {
         }
     }
 
+    public ArrayList getStudents(){
+        return students;
+    }
+
     public void addExam(String naam){
         new Exam(naam);
     }
@@ -30,8 +34,8 @@ class School {
         students.add(new Student(number, name));
     }
 
-    public Student getStudent(int studentcode){
-        return students.get(studentcode);
+    public Student getStudent(int studentNr){
+        return students.get(studentNr);
     }
 
     public void showExams(){
@@ -116,12 +120,10 @@ class School {
     }
 
     public void mostPassed(){
-        int studentnumber = 0;
         int number = students.get(0).getNumbersPassed();
         for(int i =1; i< students.size(); i++){
             if (number < students.get(i).getNumbersPassed()){
                 number = students.get(i).getNumbersPassed();
-                studentnumber = i;
             }
         }
         if (number != 0){
