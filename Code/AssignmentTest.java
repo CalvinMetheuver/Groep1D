@@ -5,8 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Scanner;
 
-
-
 class AssignmentTest {
 
     private static Assignment assignment;

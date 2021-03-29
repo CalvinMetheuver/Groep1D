@@ -11,20 +11,7 @@ class SchoolTest {
     }
 
     @Test
-    void addToStudentList() {
-
-    }
-
-    @Test
-    void getStudent() {
-    }
-
-    @Test
     void showExams() {
-    }
-
-    @Test
-    void addStudent() {
     }
 
     @Test

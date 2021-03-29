@@ -17,7 +17,7 @@ class Assignment {
         return this.answer;
     }
 
-    public boolean takeAssignment(){
+    public Boolean takeAssignment(){
         Scanner scanner = new Scanner(System.in);
         System.out.println(question);
         String answer = scanner.nextLine().toLowerCase();
@@ -25,8 +25,10 @@ class Assignment {
             System.out.println("Onjuiste invoer, voer a, b, c of d in.\nNieuw antwoord:\n");
             answer = scanner.nextLine().toLowerCase();
         }
-        return this.answer.equalsIgnoreCase(answer);
+        return checkAnswer(answer);
     }
 
-
+    public boolean checkAnswer(String answer){
+        return this.answer.equalsIgnoreCase(answer);
+    }
 }
