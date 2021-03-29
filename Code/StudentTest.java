@@ -1,31 +1,33 @@
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class StudentTest {
-    @Test
-    public void testGetStudentCode()
-    {
-        Student student = new Student(12345, "Jan");
-        assertTrue(12345 == student.getStudentCode());
+
+    private School school;
+    private Student student;
+
+    @BeforeEach
+    public void beforeAll(){
+        student = new Student(2011,"test");
+        school = new School();
+        school.addExam("test");
     }
 
     @Test
-    void testGetName()
-    {
-        Student student = new Student(123456,"Berend" );
-        assertTrue("Berend".equals(student.getName()));
+    void testAddMake() {
+        assertEquals(0,student.getMake().size());
+        student.addMake(0);
+        assertEquals(1,student.getMake().size());
     }
 
     @Test
-    void testAddMake()
-    {
-
-    }
-
-    @Test
-    void getMake()
-    {
-
+    void testSearchMake(){
+        assertEquals(null,student.searchMake(0));
+        student.addMake(0);
+        assertEquals(student.getMake().get(0),student.searchMake(0));
     }
 }

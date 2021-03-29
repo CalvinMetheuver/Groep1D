@@ -11,7 +11,6 @@ class Main{
         ReadFiles.readStudenten(menu);
         ReadFiles.readJavaQandA();
         ReadFiles.readAlgemeneKennisQandA();
-
         menu.getMenu();
  
     }

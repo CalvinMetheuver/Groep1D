@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 class Student {
     //Instance Variables
-    public ArrayList <Make> attempts = new ArrayList<Make>();
+    private ArrayList <Make> attempts = new ArrayList<Make>();
     private Integer studentcode;
     private String name;
 
@@ -13,6 +13,8 @@ class Student {
         this.studentcode = studentcode;
         this.name = name;
     }
+
+    public ArrayList getMake(){ return attempts;}
 
     public Integer getStudentCode() {
         return studentcode;
@@ -42,7 +44,7 @@ class Student {
         }
     }
 
-    public Make getMake(int exam){
+    public Make searchMake(int exam){
 
         for(Make attempt : attempts){
             if(Exam.getExams().get(exam) == attempt.getExam() && attempt.getStudent() == this){
