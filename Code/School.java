@@ -8,8 +8,10 @@ import java.util.Scanner;
 class School {
     
     private ArrayList <Student> students;
-    
+    private ArrayList <Exam> exams;
+
     public School(){
+        exams = new ArrayList<Exam>();
         students = new ArrayList<Student>();
     }
 
@@ -25,13 +27,17 @@ class School {
         return students;
     }
 
+    public ArrayList getExams(){
+        return exams;
+    }
+
     public void addExam(String naam){
-        new Exam(naam);
+        exams.add(new Exam(naam));
     }
 
     public void addToStudentList(int number, String name)
     {
-        students.add(new Student(number, name));
+        students.add(new Student(number, name,this));
     }
 
     public Student getStudent(int studentNr){
@@ -40,7 +46,7 @@ class School {
 
     public void showExams(){
         int counter = 1;
-        for (Exam exam: Exam.getExams()){
+        for (Exam exam: exams){
             System.out.println(counter+": "+exam.getName());
             counter++;
         }

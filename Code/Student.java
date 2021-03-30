@@ -6,15 +6,17 @@ class Student {
     private ArrayList <Make> attempts = new ArrayList<Make>();
     private Integer studentcode;
     private String name;
+    private School school;
 
     //Constructor
-    public Student(Integer studentcode, String name)
+    public Student(Integer studentcode, String name, School school)
     {
         this.studentcode = studentcode;
         this.name = name;
+        this.school = school;
     }
 
-    public ArrayList getMake(){ return attempts;}
+    public ArrayList getAttempts(){ return attempts;}
 
     public Integer getStudentCode() {
         return studentcode;
@@ -24,14 +26,12 @@ class Student {
         return name;
     }
 
-    public void addMake(int examNumber){
-        Make make = new Make(this, Exam.getExams().get(examNumber));
+    public void addAttempt(int examNumber){
+        Make make = new Make(this, (Exam) school.getExams().get(examNumber));
         // checken of de combinatie al bestaat// student en examen
         boolean exists = false;
         if(!attempts.isEmpty()){
             for(Make attempt : attempts){
-                System.out.println(make.getExam().getName());
-                System.out.println(attempt.getExam().getName());
                 if(!make.getExam().getName().equals(attempt.getExam().getName())){
                     exists = true;
                 }
@@ -44,10 +44,10 @@ class Student {
         }
     }
 
-    public Make searchMake(int exam){
+    public Make getAttempt(int exam){
 
         for(Make attempt : attempts){
-            if(Exam.getExams().get(exam) == attempt.getExam() && attempt.getStudent() == this){
+            if(school.getExams().get(exam) == attempt.getExam() && attempt.getStudent() == this){
                 return attempt;
             }
         }

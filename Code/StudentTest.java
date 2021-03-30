@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,22 +11,22 @@ class StudentTest {
 
     @BeforeEach
     public void beforeAll(){
-        student = new Student(2011,"test");
         school = new School();
+        student = new Student(2011,"test",school);
         school.addExam("test");
     }
 
     @Test
     void testAddMake() {
-        assertEquals(0,student.getMake().size());
-        student.addMake(0);
-        assertEquals(1,student.getMake().size());
+        assertEquals(0,student.getAttempts().size());
+        student.addAttempt(0);
+        assertEquals(1,student.getAttempts().size());
     }
 
     @Test
     void testSearchMake(){
-        assertEquals(null,student.searchMake(0));
-        student.addMake(0);
-        assertEquals(student.getMake().get(0),student.searchMake(0));
+        assertEquals(null,student.getAttempt(0));
+        student.addAttempt(0);
+        assertEquals(student.getAttempts().get(0),student.getAttempt(0));
     }
 }

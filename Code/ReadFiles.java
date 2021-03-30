@@ -30,15 +30,16 @@ class ReadFiles {
             String number = split[0];
             int code = Integer.parseInt(number);
             String name = split[1];
+            String school = split[2];
             menu.getSchool().addToStudentList(code, name);
         }
     }
 
-    public static void readJavaQandA() throws FileNotFoundException{
+    public static void readJavaQandA(Menu menu) throws FileNotFoundException{
         File file = new File("JavaExam.txt");
         String f = file.getAbsolutePath();
         Scanner scanner = new Scanner(new File(f));
-        Exam java = Exam.getExams().get(0);
+        Exam java = (Exam) menu.getSchool().getExams().get(0);
 
         while (scanner.hasNextLine()) {
             String[] split = scanner.nextLine().split(";");
@@ -50,11 +51,11 @@ class ReadFiles {
         }
     }
 
-    public static void readAlgemeneKennisQandA() throws FileNotFoundException{
+    public static void readAlgemeneKennisQandA(Menu menu) throws FileNotFoundException{
         File file = new File("AlgemeneKennisExam.txt");
         String f = file.getAbsolutePath();
         Scanner scanner = new Scanner(new File(f));
-        Exam algemeneKennis = Exam.getExams().get(1);
+        Exam algemeneKennis = (Exam) menu.getSchool().getExams().get(1);
 
         while (scanner.hasNextLine()) {
             String[] split = scanner.nextLine().split(";");

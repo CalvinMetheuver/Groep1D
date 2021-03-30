@@ -79,8 +79,8 @@ class Menu {
                 this.getSchool().showExams();
                 int examNumber = scanner.nextInt() - 1;
                 
-                this.getSchool().getStudent(studentcode).addMake(examNumber);
-                this.getSchool().getStudent(studentcode).searchMake(examNumber).takeExam();
+                this.getSchool().getStudent(studentcode).addAttempt(examNumber);
+                this.getSchool().getStudent(studentcode).getAttempt(examNumber).takeExam();
                 break;
             case 6:
                 System.out.println("Welke student wilt zijn/haar resultaten zien?");

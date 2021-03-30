@@ -15,9 +15,9 @@ class SchoolTest {
     @Test
     void testAddExam() {
         school.addToStudentList(2011,"test");
-        assertEquals(0,Exam.getExams().size());
+        assertEquals(0,school.getExams().size());
         school.addExam("java");
-        assertEquals(1,Exam.getExams().size());
+        assertEquals(1,school.getExams().size());
     }
 
     @Test

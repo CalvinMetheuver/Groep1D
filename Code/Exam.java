@@ -7,21 +7,15 @@ public class Exam {
 
     //instace variables
     private ArrayList<Assignment> assignments = new ArrayList<Assignment>();
-    private static ArrayList<Exam> exams = new ArrayList<Exam>();
     private String naam;
 
     //constructor
     public Exam(String naam) {
         this.naam = naam;
-        exams.add(this);
     }
 
-    public ArrayList<Assignment> getAssignment() {
+    public ArrayList<Assignment> getAssignments() {
         return assignments;
-    }
-
-    public static ArrayList<Exam> getExams() {
-        return exams;
     }
 
     public String getName() {
@@ -35,7 +29,7 @@ public class Exam {
 
     public Boolean takeExam(){
         int cijfer = 1;
-        for(Assignment assignment: this.getAssignment()){
+        for(Assignment assignment: this.getAssignments()){
             if(assignment.takeAssignment()){
                 cijfer++;
             }
@@ -43,9 +37,10 @@ public class Exam {
         if(cijfer > 5){
             System.out.println("\nU heeft een "+cijfer+" behaald. U bent geslaagd!");
             return true;
+        }else{
+            System.out.println("\nU heeft een "+cijfer+" behaald. U bent gezakt.");
+            return false;
         }
-        System.out.println("\nU heeft een "+cijfer+" behaald. U bent gezakt.");
-        return false;
     }
 }
 
