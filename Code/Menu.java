@@ -73,14 +73,14 @@ class Menu {
             case 5:
                 System.out.println("Welk student gaat het examen maken?");
                 this.getSchool().showStudents();
-                int studentcode= scanner.nextInt() - 1;
+                int student = scanner.nextInt() - 1;
 
                 System.out.println("welk examen wilt de student maken?");
                 this.getSchool().showExams();
-                int examNumber = scanner.nextInt() - 1;
+                int exam = scanner.nextInt() - 1;
                 
-                this.getSchool().getStudent(studentcode).addAttempt(examNumber);
-                this.getSchool().getStudent(studentcode).getAttempt(examNumber).takeExam();
+                this.getSchool().getStudent(student).addAttempt(exam);
+                this.getSchool().getStudent(student).getAttempt(exam).takeExam();
                 break;
             case 6:
                 System.out.println("Welke student wilt zijn/haar resultaten zien?");

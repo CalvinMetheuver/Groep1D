@@ -16,7 +16,11 @@ class Student {
         this.school = school;
     }
 
-    public ArrayList getAttempts(){ return attempts;}
+    public School getSchool(){
+        return this.school;
+    }
+
+    public ArrayList <Make> getAttempts(){ return attempts;}
 
     public Integer getStudentCode() {
         return studentcode;
@@ -27,7 +31,7 @@ class Student {
     }
 
     public void addAttempt(int examNumber){
-        Make make = new Make(this, (Exam) school.getExams().get(examNumber));
+        Make make = new Make(this, school.getExams().get(examNumber));
         // checken of de combinatie al bestaat// student en examen
         boolean exists = false;
         if(!attempts.isEmpty()){

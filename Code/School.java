@@ -11,8 +11,8 @@ class School {
     private ArrayList <Exam> exams;
 
     public School(){
-        exams = new ArrayList<Exam>();
-        students = new ArrayList<Student>();
+        exams = new ArrayList<>();
+        students = new ArrayList<>();
     }
 
     public void showStudents(){
@@ -23,16 +23,16 @@ class School {
         }
     }
 
-    public ArrayList getStudents(){
+    public ArrayList <Student> getStudents(){
         return students;
     }
 
-    public ArrayList getExams(){
+    public ArrayList <Exam> getExams(){
         return exams;
     }
 
-    public void addExam(String naam){
-        exams.add(new Exam(naam));
+    public void addExam(String name){
+        exams.add(new Exam(name));
     }
 
     public void addToStudentList(int number, String name)
